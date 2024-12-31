@@ -1,0 +1,105 @@
+/* voucher-card start */
+
+.voucher-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.voucher-card {
+  background-color: var(--cards-bg);
+  width: calc(33.33% - 16px);
+
+  @media (max-width: 1286px) {
+    width: calc(50% - 8px);
+  }
+
+  @media (max-width: 1080px) {
+    width: calc(50% - 8px);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.voucher-card .cards-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d9e0;
+  padding: 16px;
+}
+
+.voucher-card .cards-top div:first-child {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.voucher-card .cards-top div:first-child p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.voucher-card .cards-top div:first-child button {
+  padding: 6px 10px;
+  background-color: #ff7900;
+  border-radius: 999px;
+  border: none;
+
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.voucher-card .cards-top div:last-child {
+  background-color: var(--primary-minimal-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.voucher-card .cards-top div:last-child svg path {
+  stroke: var(--black);
+}
+
+.voucher-card .cards-bottom {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.voucher-bottom-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 16px 16px;
+}
+
+.voucher-bottom-btns button:first-child {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--black);
+  border-radius: 999px;
+  border: 1px solid var(--black);
+}
+
+.voucher-bottom-btns button:last-child {
+  padding: 12px 26px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+/* voucher-card end */

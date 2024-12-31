@@ -1,0 +1,49 @@
+.sub-table-head th {
+  color: var(--black);
+  padding: 16px;
+  text-align: start;
+  border-bottom: 1px solid var(--table-head);
+
+  background-color: var(--table-head);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.sub-row {
+  background-color: #f9f9f9;
+  border-left: 4px solid #e0e0e0;
+}
+
+.toggle-cell {
+  text-align: center;
+  cursor: pointer;
+}
+
+.sub-level {
+  font-weight: 300;
+  color: #666;
+}
+
+.data-cell {
+  padding-left: 20px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.data-cell.sub-level {
+  font-weight: 300;
+  color: #666;
+}
+
+.settings-cell {
+  text-align: center;
+}
+
+.sub-table-head th {
+  background-color: #eaeaea;
+  font-weight: 600;
+}

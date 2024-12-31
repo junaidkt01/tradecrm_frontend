@@ -1,0 +1,55 @@
+.toggle-switch-wrapper {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.toggle-container {
+  width: 80px;
+  height: 40px;
+  background-color: #e9e9eb;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-container.night {
+  background-color: #46484f;
+}
+
+.toggle-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.toggle-button.white {
+  background-color: white;
+}
+
+.toggle-button.dark {
+  background-color: black;
+}
+
+.toggle-container.night .toggle-button {
+  left: 42px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+}
+
+.sun-icon {
+  left: 10px;
+}
+
+.moon-icon {
+  right: 10px;
+}

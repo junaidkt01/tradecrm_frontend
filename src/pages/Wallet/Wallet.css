@@ -1,0 +1,57 @@
+.wallet-page-top {
+  border-bottom: 1px solid #d8d9e0;
+}
+
+.ledger-profile-wallet-transfer-btns {
+  display: flex;
+  gap: 48px;
+
+  margin-top: 16px;
+}
+
+.ledger-profile-wallet-transfer-btns button {
+  padding: 14px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #62636c;
+  border-bottom: 2px solid transparent;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.ledger-profile-wallet-transfer-btns button.active {
+  border-bottom: 2px solid #7a5af8;
+}
+
+.ledger-profile-wallet-transfer-btns button:hover {
+  border-bottom: 2px solid #7a5af8;
+}
+
+.wallet-page-table {
+  padding: 16px 0;
+
+  display: grid;
+  gap: 16px;
+}
+
+.status-selection-btn {
+  display: flex;
+  justify-content: end;
+}
+
+.wallet-head-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  @media (max-width: 1080px) {
+    flex-direction: column-reverse;
+    align-items: end;
+    gap: 16px;
+  }
+}

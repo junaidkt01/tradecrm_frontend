@@ -1,0 +1,256 @@
+:root {
+  --page-svg-icon: #62636c;
+}
+
+[data-theme="dark"] {
+  --page-svg-icon: white;
+}
+
+.side-bar-menu {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-right: 3px solid var(--window-color);
+
+  width: 250px;
+
+  transition: width 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.side-bar-menu.closed {
+  width: 60px;
+}
+
+.side-bar-menu .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: var(--white);
+  padding: 0px 40px;
+  min-height: 76px;
+  max-height: 76px;
+  border-end-end-radius: 8px;
+  margin-bottom: 3px;
+
+  transition: padding 0.5s ease;
+}
+
+.side-bar-menu .logo .logo-img svg path:last-child {
+  fill: var(--black);
+}
+
+.side-bar-menu .logo .logo-text svg path {
+  fill: var(--black);
+}
+
+.side-bar-menu.closed .logo {
+  padding: 0px 10px;
+}
+
+.menu-items {
+  border-top-right-radius: 8px;
+
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 24px;
+
+  height: 66vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  transition: padding 0.5s ease;
+  position: relative;
+
+  border-bottom: 1px solid #62636c33;
+}
+
+.side-bar-menu.closed .menu-items {
+  padding: 24px 0px;
+}
+
+.menu-items::-webkit-scrollbar {
+  width: 2px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+.menu-items::-webkit-scrollbar-track {
+  background-color: var(--window-color);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.menu-item.active {
+  background-color: var(--primary-minimal-color);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.menu-item:hover {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-minimal-color);
+  }
+}
+
+.menu-item.current-url {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.side-bar-menu.closed .menu-item {
+  padding: 12px 16px;
+}
+
+.menu-item .menu-item-icon {
+  margin-right: 8px;
+}
+
+.logout-btn:hover .logout-icon svg path,
+.menu-item .menu-item-icon svg path {
+  transition: stroke 0.5s ease;
+}
+
+.logout-btn:hover .logout-icon svg path {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-minimal-color);
+  }
+}
+
+.menu-item.current-url .menu-item-icon svg path {
+  stroke: white;
+}
+
+.menu-item .menu-item-icon svg path,
+.logout-icon svg path,
+.menu-hide-btn svg path {
+  stroke: var(--black);
+}
+
+.dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+
+/* logout btn */
+
+.logout-btn-div {
+  position: sticky;
+  bottom: 0;
+
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 24px;
+
+  transition: padding 0.5s ease;
+}
+
+.side-bar-menu.closed .logout-btn-div {
+  padding: 24px 0px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.logout-btn:hover {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-minimal-color);
+  }
+}
+
+.side-bar-menu.closed .logout-btn {
+  padding: 12px 16px;
+}
+
+/* logout btn*/
+
+/* dropdown-items start  */
+
+.dropdown-items {
+  overflow-y: hidden;
+}
+
+.dropdown-items {
+  background-color: var(--primary-very-minimal-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  gap: 8px;
+  padding: 0 24px;
+
+  transition: padding 0.5s ease;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  overflow-x: hidden;
+}
+
+.dropdown-items::-webkit-scrollbar {
+  display: none;
+}
+
+.dropdown-items.isActive {
+  padding: 8px 24px;
+}
+
+.side-bar-menu.closed .dropdown-items {
+  padding: 24px 0px;
+}
+
+.dropdown-items p {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-wrap: nowrap;
+  /* overflow-x: hidden; */
+
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.sub-menu-item.current-url {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.dropdown-items p:hover {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-minimal-color);
+    color: white;
+  }
+}
+
+.side-bar-menu.closed .dropdown-items p {
+  padding: 12px 16px;
+}
+
+/* dropdown-items end  */

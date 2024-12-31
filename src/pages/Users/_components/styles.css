@@ -1,0 +1,192 @@
+/* FilterBtn */
+
+.filter-btn {
+  border-radius: 8px;
+  padding: 6px 12px;
+  border: 1px solid #cecaff;
+  /* background-color: white; */
+  background-color: transparent;
+  color: var(--black);
+  cursor: pointer;
+
+  font-family: Roboto Mono;
+
+  /* font-size: 18px; */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-btn.active {
+  /* background-color: #cecaff; */
+  background-color: var(--primary-minimal-color);
+}
+
+.filter-btn div {
+  background-color: #7a5af8;
+  color: white;
+  border-radius: 50%;
+  padding: 7px 10px;
+}
+
+.filter-btn div p {
+  font-family: Roboto Mono;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* add-user-form */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+.add-user-form {
+  /* background-color: var(--white); */
+  /* background-color: red; */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  width: 70%;
+
+  position: fixed;
+  top: 15%;
+
+  @media (max-width: 1080px) {
+    width: auto;
+    top: 16px;
+
+    height: 85vh;
+    overflow-y: hidden;
+  }
+}
+
+.add-user-form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.add-user-form-controller p {
+  margin-bottom: 8px;
+}
+
+.add-user-form-controller div {
+  display: flex;
+  gap: 8px;
+}
+
+.add-user-form-controller div button {
+  padding: 10px 16px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-user-form-controller div button.active {
+  background-color: #dcdaff;
+}
+
+.add-user-form-box {
+  @media (max-width: 1080px) {
+    max-height: 70dvh;
+    overflow-y: auto;
+  }
+}
+
+.add-user-form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
+}
+
+.add-user-form-inputs div {
+  width: calc(25% - 16px);
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1080px) {
+    width: calc(100% - 16px);
+  }
+}
+
+.add-user-form-inputs div label {
+  margin-bottom: 8px;
+}
+
+.add-user-form-inputs div select,
+.add-user-form-inputs div input {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #80828d;
+  outline: none;
+
+  font-family: Roboto Mono;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.add-user-form-button {
+  display: flex;
+  justify-content: end;
+}
+
+.add-user-form-button button {
+  display: flex;
+  justify-content: end;
+  width: fit-content;
+
+  justify-self: end;
+
+  padding: 12px 16px;
+  /* margin: 12px 16px; */
+  margin: 12px 0px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ////////////////////// */
+.users-inputs-filter-btns {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-y: auto;
+  width: 100%;
+  text-wrap: nowrap;
+}
+
+.users-inputs-filter-btns button p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3b3b3b;
+}
+
+.users-inputs-filter-btns::-webkit-scrollbar {
+  display: none;
+}
+/* ////////////////////// */

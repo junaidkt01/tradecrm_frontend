@@ -1,0 +1,83 @@
+/* **********************************
+              kyc-docs
+********************************** */
+
+.kyc-docs form {
+  display: grid;
+  gap: 30px;
+}
+
+.kyc-docs form {
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.kyc-docs form .select-input label {
+  margin-bottom: 8px;
+}
+
+.kyc-docs form input {
+  margin-top: 8px;
+}
+
+.kyc-docs .select-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.kyc-docs .select-input select {
+  padding: 10px;
+  outline: none;
+  border: 1px solid #80828d;
+  border-radius: 8px;
+}
+
+.kyc-docs .select-input select option {
+  padding: 10px;
+}
+
+.kyc-docs .file-input-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.kyc-docs .file-input-field {
+  width: calc(33.33% - 16px);
+}
+
+.kyc-docs .file-input-field input {
+  outline: none;
+  border: 1px dotted #80828d;
+  border-radius: 8px;
+}
+
+.kyc-docs form .kyc-submit-btn {
+  display: flex;
+  justify-content: end;
+
+  width: 100%;
+}
+
+.kyc-docs form .kyc-submit-btn button {
+  padding: 10px 16px;
+  border-radius: 16px;
+  border: none;
+
+  background-color: var(--primary-color);
+  color: var(--white);
+
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ***************************************
+              AccountDetails
+*************************************** */

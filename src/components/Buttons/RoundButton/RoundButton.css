@@ -1,0 +1,15 @@
+.round-button {
+  border: 1px solid #cdced7;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+
+  display: grid;
+  place-items: center;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.round-button svg path {
+  stroke: var(--black);
+}

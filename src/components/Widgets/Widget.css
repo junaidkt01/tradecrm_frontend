@@ -1,0 +1,224 @@
+.dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  margin: 24px;
+
+  @media (max-width: 1080px) {
+    margin: 16px;
+  }
+}
+
+/* ----------- account-wallet-widget start --------- */
+
+.account-wallet-widget:hover {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+}
+
+.account-wallet-widget {
+  width: calc(20% - 45px);
+  background-color: var(--white);
+
+  padding: 16px;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+  @media (max-width: 1080px) {
+    /* width: calc(50% - 45px); */
+    width: 100%;
+  }
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-section div {
+  padding: 2px 15px;
+  background-color: black;
+  border-radius: 58px;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.account-wallet-widget .title-section div svg path {
+  transition: all 0.5s ease-in-out;
+}
+
+.account-wallet-widget:hover .title-section div {
+  @media (min-width: 1080px) {
+    background-color: white;
+  }
+}
+
+.account-wallet-widget:hover .title-section div svg path {
+  @media (min-width: 1080px) {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+  }
+}
+
+.title-section.active div {
+  background-color: white;
+}
+
+.account-wallet-widget .content-section .title {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.account-wallet-widget .content-section .widget-amount-icon {
+  border-radius: 50%;
+  background-color: #fef2d6;
+
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+}
+
+.account-wallet-widget .content-section .amount-section {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+
+.account-wallet-widget .content-section .amount-section .widget-amounts span {
+  display: flex;
+  gap: 4px;
+
+  font-size: 12px;
+}
+
+.account-wallet-widget
+  .content-section
+  .amount-section
+  .widget-amounts
+  span
+  p:first-child {
+  font-weight: 700;
+}
+
+.account-wallet-widget
+  .content-section
+  .amount-section
+  .widget-amounts
+  span
+  p:last-child {
+  font-weight: 400;
+}
+
+.account-wallet-widget .content-section .amount-section .widget-amount {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.content-section-wrapper {
+  @media (max-width: 1080px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+  }
+}
+
+/* ----------- account-wallet-widget end --------- */
+
+/* ----------- Widget start --------- */
+
+.widget-card {
+  width: calc(20% - 45px);
+  background-color: var(--white);
+
+  padding: 16px;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+  @media (max-width: 1080px) {
+    /* width: calc(50% - 45px); */
+    width: 100%;
+  }
+}
+
+.widget-card:hover {
+  @media (min-width: 1080px) {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+}
+
+.widget-card:hover .title-section div svg path {
+  @media (min-width: 1080px) {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+  }
+}
+
+.widget-card .title-section div svg path {
+  transition: all 0.5s ease-in-out;
+}
+
+.widget-card:hover .title-section div {
+  @media (min-width: 1080px) {
+    background-color: white;
+  }
+}
+
+.balance-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.balance-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-section div p:first-child {
+  color: #62636c;
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.19px;
+  transition: color 0.5s ease-in-out;
+}
+
+.widget-card:hover .balance-section div p:first-child {
+  @media (min-width: 1080px) {
+    color: var(--white);
+  }
+}
+
+.balance-section div p:last-child {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.74px;
+  text-align: right;
+}
+
+/* ----------- Widget end --------- */

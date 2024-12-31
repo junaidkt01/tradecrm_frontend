@@ -1,0 +1,96 @@
+.create-ib-commission {
+  display: flex;
+  align-items: end;
+
+  gap: 16px;
+}
+
+.create-ib-commission div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-ib-commission div label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.create-ib-commission div input {
+  padding: 16px;
+  border: 1px solid #80828d;
+  border-radius: 8px;
+  outline: none;
+}
+
+.create-ib-commission button {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 16px 24px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+/* commission-settings-card start */
+
+.commission-settings-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.commission-settings-card {
+  padding: 24px;
+  background-color: var(--cards-bg);
+  width: calc(25% - (16px + 48px));
+
+  @media (max-width: 1286px) {
+    width: calc(33.33% - (16px + 48px));
+  }
+
+  @media (max-width: 1080px) {
+    width: calc(50% - (16px + 48px));
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.commission-settings-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+
+  margin-bottom: 8px;
+}
+
+.commission-settings-card-btm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.commission-settings-card-btm p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light-font);
+}
+
+.commission-settings-card-btm p strong {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+/* commission-settings-card end */
+
+.ledger-profile-wallet-transfer-btns {
+  text-wrap: nowrap;
+
+  overflow-y: auto;
+}

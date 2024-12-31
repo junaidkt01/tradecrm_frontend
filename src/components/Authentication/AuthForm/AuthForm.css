@@ -1,0 +1,125 @@
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 48px;
+
+  padding: 0 100px;
+  background-color: var(--white);
+
+  @media (max-width: 1080px) {
+    padding: 0 60px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 0 32px;
+  }
+}
+
+.auth-form .auth-form-title h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.auth-form .auth-form-title p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.auth-form form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth-form form .input-field {
+  position: relative;
+  display: grid;
+}
+
+.auth-form form .input-field span {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(25%);
+  cursor: pointer;
+}
+
+.auth-form form .input-field label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.auth-form form .input-field input {
+  border: 1px solid #80828d;
+  border-radius: 8px;
+  padding: 16px;
+  outline: none;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-forgot a {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.remember-forgot .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember-forgot .remember-me input {
+  width: 20px;
+  height: 20px;
+}
+
+.remember-forgot .remember-me p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: "\2713";
+  position: absolute;
+  top: 0;
+  left: 3px;
+  color: white;
+  font-size: 12px;
+  line-height: 16px;
+}

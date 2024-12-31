@@ -1,0 +1,141 @@
+/* .users-page {
+  padding: 16px 32px;
+  margin: 16px 32px 0 32px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: var(--white);
+
+  position: relative;
+} */
+
+/* .table-control-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #d8d9e0;
+  margin-bottom: 32px;
+} */
+
+.search-and-refresh {
+  display: flex;
+  gap: 11px;
+  flex: 0.5;
+
+  @media (max-width: 1080px) {
+    flex: 1;
+    gap: 4px;
+  }
+}
+
+/* .search-input {
+  display: flex;
+
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  width: 100%;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: transparent;
+  color: var(--dark);
+
+  font-family: Roboto Mono, monospace;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.search-input .search-icon {
+  background-color: var(--primary-color);
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+} */
+
+.refresh-btn {
+  padding: 10px;
+  background-color: var(--black);
+  border-radius: 8px;
+}
+
+.refresh-btn svg path {
+  fill: var(--white);
+}
+
+.export-add-users-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 1080px) {
+    gap: 8px;
+  }
+}
+
+.export-add-users-btns button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+  /* border: 1px solid #1e1f24; */
+  background-color: var(--white);
+  cursor: pointer;
+
+  color: var(--black);
+  font-family: Roboto Mono;
+  font-size: 14px;
+  font-weight: 400;
+  
+  @media (max-width: 1080px) {
+    padding: 10px 10px;
+  }
+}
+
+.export-add-users-btns button span {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.export-add-users-btns button svg path {
+  stroke: var(--black);
+}
+
+.export-add-users-btns button:last-child {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.export-add-users-btns button:last-child svg path {
+  stroke: var(--primary-color);
+}
+
+.filter-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 16px;
+
+  overflow-x: scroll;
+  text-wrap: nowrap;
+}
+
+.filter-btns::-webkit-scrollbar {
+  display: none;
+}

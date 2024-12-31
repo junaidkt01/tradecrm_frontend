@@ -1,0 +1,97 @@
+.table-component {
+  border-radius: 8px;
+  text-wrap: nowrap;
+
+  @media (max-width: 1080px) {
+    overflow-x: scroll;
+  }
+}
+
+.table-component table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  /* overflow: auto; */
+}
+
+.table-component table thead {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.table-component table thead tr th {
+  color: var(--black);
+  padding: 16px;
+  text-align: start;
+  border-bottom: 1px solid var(--table-head);
+
+  background-color: var(--table-head);
+}
+
+.table-component table tbody {
+  border: 1px solid var(--border);
+}
+
+.table-component table tbody tr td {
+  padding: 16px 16px;
+  text-align: start;
+}
+
+.table-component table tbody tr:nth-child(odd) td {
+  background-color: var(--table-odd-clr);
+  border-bottom: 1px solid var(--table-odd-clr);
+}
+
+.table-component table tbody tr:nth-child(even) td {
+  background-color: var(--table-even-clr);
+  border-bottom: 1px solid var(--table-even-clr);
+}
+
+.table-component table tbody tr .table-btn {
+  text-align: center;
+}
+
+.table-component table tbody tr .table-btn svg {
+  cursor: pointer;
+}
+
+.table-component table tbody tr .table-btn .settings {
+  padding: 1px;
+}
+
+.table-component table tbody tr .table-btn .settings path {
+  fill: var(--black);
+}
+
+.table-component table tbody tr .table-btn .settings.active {
+  background-color: var(--primary-minimal-color);
+  border-radius: 4px;
+}
+
+.users-menus-wrapper {
+  position: absolute;
+  right: 80%;
+  top: 0;
+  transform: translate(-0%, -10%);
+
+  background-color: var(--white);
+  padding: 14px 10px;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 0px #00000040;
+  border-radius: 8px;
+}
+
+.users-menus-wrapper .users-menu {
+  display: flex;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.users-menus-wrapper .users-menu:hover {
+  background-color: var(--primary-very-minimal-color);
+}

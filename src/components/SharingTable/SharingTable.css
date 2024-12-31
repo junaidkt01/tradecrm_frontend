@@ -1,0 +1,56 @@
+.finance-table {
+    border-radius: 8px;
+  }
+  
+  .finance-table table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .finance-table table thead {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  
+  .finance-table table thead tr th {
+    color: var(--black);
+    padding: 16px;
+    text-align: start;
+    border-bottom: 1px solid var(--table-head);
+  
+    background-color: var(--table-head);
+  }
+  
+  .finance-table table tbody {
+    border: 1px solid var(--border);
+  }
+  
+  .finance-table table tbody tr td {
+    padding: 16px 16px;
+    text-align: start;
+  }
+  
+  .finance-table table tbody tr:nth-child(odd) td {
+    background-color: var(--table-odd-clr);
+    border-bottom: 1px solid var(--table-odd-clr);
+  }
+  
+  .finance-table table tbody tr:nth-child(even) td {
+    background-color: var(--table-even-clr);
+    border-bottom: 1px solid var(--table-even-clr);
+  }
+  
+  .finance-table table tbody tr .table-btn {
+    text-align: center;
+  }
+  
+  .finance-table table tbody tr .table-btn svg {
+    cursor: pointer;
+  }
+  
+  .finance-table table tbody tr .table-btn.settings svg path {
+    fill: var(--black);
+  }
+  

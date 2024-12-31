@@ -1,0 +1,317 @@
+:root {
+  --executvs-cards-bg: #f9f9fb;
+}
+
+[data-theme="dark"] {
+  --executvs-cards-bg: #242a3b;
+}
+
+.add-executives-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.executives-page .table-control-btns {
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    text-wrap: nowrap;
+    align-items: end;
+    justify-content: end;
+    gap: 16px;
+  }
+}
+
+.add-executives-btns button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  border: 1px solid #1e1f24;
+  background-color: var(--white);
+  cursor: pointer;
+
+  font-family: Roboto Mono;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-executives-btns button span {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.add-executives-btns button:last-child {
+  border: 1px solid #7a5af8;
+  color: #7a5af8;
+}
+
+.executives-filter-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 1080px) {
+    width: 100%;
+    overflow: auto;
+    gap: 8px;
+  }
+}
+
+.executives-filter-btns::-webkit-scrollbar {
+  display: none;
+}
+
+/* executives-cards start*/
+
+.executives-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.exctvs-card {
+  width: calc(25% - 16px);
+
+  border-radius: 8px;
+
+  display: flex;
+  background-color: #cdced740;
+  flex-direction: column;
+  gap: 1px;
+
+  @media (max-width: 1080px) {
+    width: calc(100% - 16px);
+  }
+}
+
+.exctvs-card .exctvs-card-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* background-color: #f9f9fb; */
+  background-color: var(--executvs-cards-bg);
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exctvs-card .exctvs-card-top .exctvs-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 13;
+}
+
+.exctvs-card .exctvs-card-top .circle {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #b9bbc6;
+}
+
+.exctvs-card .exctvs-card-top .circle.active {
+  background-color: #009800;
+}
+
+.exctvs-card .exctvs-card-top div span p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.exctvs-card-edit {
+  flex: 1;
+}
+
+.exctvs-card .exctvs-card-btm {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  /* background-color: #f9f9fb; */
+  background-color: var(--executvs-cards-bg);
+  padding: 16px;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+/* executives-cards end*/
+
+/* AddExctvsForm.tsx start */
+/* add-exctvs-form */
+
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+.add-exctvs-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  width: 70%;
+  height: 80dvh;
+  overflow-y: auto;
+
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  @media (max-width: 1080px) {
+    width: auto;
+    margin: 0 16px;
+  }
+}
+
+.add-exctvs-form::-webkit-scrollbar {
+  display: none;
+} */
+
+.add-exctvs-form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.add-exctvs-form-controller p {
+  margin-bottom: 8px;
+}
+
+.add-exctvs-form-controller div {
+  display: flex;
+  gap: 8px;
+}
+
+.add-exctvs-form-controller div button {
+  padding: 10px 16px;
+  border-radius: 40px;
+  background-color: #dcdaff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-exctvs-form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.add-exctvs-form-inputs div {
+  width: calc(25% - 16px);
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+}
+
+/* .add-exctvs-form-inputs div label {
+  margin-bottom: 8px;
+} */
+
+.add-exctvs-form-inputs div select,
+.add-exctvs-form-inputs div input {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #80828d;
+  outline: none;
+
+  font-family: Roboto Mono;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.add-exctvs-form-button {
+  display: flex;
+  justify-content: end;
+}
+
+.add-exctvs-form-button button {
+  display: flex;
+  justify-content: end;
+  width: fit-content;
+
+  justify-self: end;
+
+  padding: 12px 16px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+/* AddExctvsForm.tsx end */
+
+/* *********************************
+        accordion-settings
+********************************* */
+
+.accordion-settings-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.accordion-settings {
+  border: 1px solid #62636c;
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  width: calc(50% - 16px);
+
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+  box-sizing: border-box;
+}
+
+.accordion-settings-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+}
+
+.accordion-settings-title p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.1px;
+}
+
+.radio-inputs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-open .accordion-content {
+  display: block;
+  margin-top: 10px;
+}
+
+.accordion-content {
+  transition: all 0.3s ease-in-out;
+}

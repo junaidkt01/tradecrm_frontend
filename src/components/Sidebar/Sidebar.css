@@ -1,0 +1,143 @@
+.side-bar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+  border-right: 3px solid var(--window-color);
+}
+
+.sidebar-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.top-logo {
+  background-color: var(--white);
+  padding: 0px 40px;
+  min-height: 76px;
+  max-height: 76px;
+  display: grid;
+  place-items: center;
+  border-end-end-radius: 8px;
+  margin-bottom: 3px;
+}
+
+.top-logo img {
+  width: 100%;
+}
+
+.sidebar-buttons {
+  padding: 24px 16px 32px 24px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top-right-radius: 8px;
+  height: 100vh;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.logout-btn {
+  background-color: var(--white);
+  padding: 24px 16px 32px 24px;
+}
+
+.logout-btn button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar-buttons::-webkit-scrollbar {
+  width: 1px;
+}
+
+.sidebar-buttons::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+.sidebar-buttons::-webkit-scrollbar-track {
+  background-color: var(--window-color);
+}
+
+.sidebar-button .btn-title {
+  width: 100%;
+}
+
+.sidebar-button .btn-title:hover {
+  background-color: #cecaff;
+}
+
+.sidebar-button .btn-title {
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-transform: capitalize;
+
+  border: none;
+  padding: 12px 16px;
+
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.1px;
+}
+
+.sidebar-button .btn-title.isActive {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.sidebar-button .btn-title span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dropdown-btns {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+.dropdown-btns.isActive {
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  padding: 8px 0;
+}
+
+.dropdown-btns button {
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  text-transform: capitalize;
+
+  border: none;
+  padding: 12px 22px;
+
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.1px;
+
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-btns button:hover {
+  background-color: #cecaff;
+}

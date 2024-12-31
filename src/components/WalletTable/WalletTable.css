@@ -1,0 +1,59 @@
+.wallet-table {
+  border-radius: 8px;
+  text-wrap: nowrap;
+  @media (max-width: 1080px) {
+    overflow-y: scroll;
+  }
+}
+
+.wallet-table table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wallet-table table thead {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.wallet-table table thead tr th {
+  color: var(--black);
+  padding: 16px;
+  text-align: start;
+  border-bottom: 1px solid var(--table-head);
+
+  background-color: var(--table-head);
+}
+
+.wallet-table table tbody {
+  border: 1px solid var(--border);
+}
+
+.wallet-table table tbody tr td {
+  padding: 16px 16px;
+  text-align: start;
+}
+
+.wallet-table table tbody tr:nth-child(odd) td {
+  background-color: var(--table-odd-clr);
+  border-bottom: 1px solid var(--table-odd-clr);
+}
+
+.wallet-table table tbody tr:nth-child(even) td {
+  background-color: var(--table-even-clr);
+  border-bottom: 1px solid var(--table-even-clr);
+}
+
+.wallet-table table tbody tr .table-btn {
+  text-align: center;
+}
+
+.wallet-table table tbody tr .table-btn svg {
+  cursor: pointer;
+}
+
+.wallet-table table tbody tr .table-btn.settings svg path {
+  fill: var(--black);
+}

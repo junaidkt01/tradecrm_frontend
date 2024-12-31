@@ -1,0 +1,20 @@
+.verify-btn {
+  background-color: white;
+  box-shadow: 0px 4px 8px 0px #0000001f;
+  color: #cc0000;
+  width: 57px;
+  height: 31px;
+  border-radius: 57px;
+  cursor: pointer;
+
+  border: 2px solid #cc0000;
+  font-family: Roboto Mono;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.46px;
+}
+
+.verify-btn.active {
+  border: 2px solid #009800;
+  color: #009800;
+}

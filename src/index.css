@@ -1,0 +1,157 @@
+/* --font: "Inter", sans-serif; */
+/* --font: "Montserrat", sans-serif; */
+/* --font: "Poppins", sans-serif; */
+/* --font: "Roboto Mono", monospace;  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+:root {
+  --primary-color: #7a5af8;
+  --primary-minimal-color: #cecaff;
+  --primary-very-minimal-color: #f1f1ff;
+
+  --window-color: #eff0f3;
+  --white: #ffff;
+  --black: #000000;
+  --border: #b9bbc6;
+  --font-color: #000000;
+
+  --font: "Poppins", sans-serif;
+  --light-font: #62636c;
+
+  --table-head: #e7e8ec;
+  --table-odd-clr: #ffffff;
+  --table-even-clr: #f9f9fb;
+
+  /* --cards-bg: white; */
+  --cards-bg: #f9f9fb;
+  --settings-border: #cdced7;
+}
+
+label,
+input,
+textarea,
+button {
+  font-family: var(--font) !important;
+}
+
+[data-theme="dark"] {
+  --primary-color: #3d63dd;
+  --primary-minimal-color: #172448;
+  --primary-very-minimal-color: #1724489a;
+
+  --white: #111725;
+  --black: #ffff;
+  --border: #46484f;
+  --window-color: #000000;
+  --font-color: #ffff;
+  --light-font: white;
+
+  --table-head: #393a40;
+  --table-odd-clr: #0c111c;
+  --table-even-clr: #101318;
+
+  --cards-bg: #242a3b;
+  --settings-border: #222325;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background-color: var(--window-color);
+  color: var(--font-color);
+
+  user-select: none;
+  /* pointer-events: none; */
+}
+
+/* //////////////////////////////////////// */
+.kyc-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-file-input {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #1d4ed8;
+}
+
+.submit-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #991b1b;
+}
+
+.alert-success {
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #166534;
+}
+
+/* Add some basic form validation styles */
+.form-select:invalid,
+.form-file-input:invalid {
+  border-color: #ef4444;
+}
+/* //////////////////////////////////////// */

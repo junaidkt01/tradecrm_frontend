@@ -1,0 +1,57 @@
+.success-toast {
+  background-color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+
+  padding: 30px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 999;
+}
+
+.success-toast:first-child {
+  margin-bottom: 20px;
+}
+
+.toast-message {
+  color: #009800;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.toast-desc {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.success-toast .buttons {
+  display: flex;
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.success-toast .continue-btn {
+  border: 1px solid #009800;
+  padding: 12px;
+  color: #009800;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.success-toast .cancel-btn {
+  border: 1px solid var(--black);
+  padding: 12px;
+  color: var(--black);
+  border-radius: 8px;
+  background-color: transparent;
+}

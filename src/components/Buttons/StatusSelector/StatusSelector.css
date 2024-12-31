@@ -1,0 +1,38 @@
+.status-selector {
+  border: 1px solid #ff7900;
+  border-radius: 8px;
+  padding: 5px 16px;
+  color: #ff7900;
+  outline: none;
+  text-align: center;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.status-selector option {
+  padding: 10px 16px;
+}
+
+/* .status-selector {
+  border: 1px solid #ff7900;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #ff7900;
+  outline: none;
+
+  width: 100%;
+
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.status-selector option {
+  padding: 10px 16px;
+} */

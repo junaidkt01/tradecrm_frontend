@@ -1,0 +1,35 @@
+.finance-table-btn {
+  border-bottom: 1px solid #d8d9e0;
+  margin-bottom: 32px;
+}
+
+.finance-head-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  @media (max-width: 1080px) {
+    display: grid;
+    gap: 16px;
+  }
+}
+
+.request-report {
+  display: flex;
+  gap: 48px;
+}
+
+.request-report button {
+  padding: 14px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.request-report button:hover {
+  border-bottom: 2px solid #7a5af8;
+}
