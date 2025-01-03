@@ -2,16 +2,19 @@ import { useState } from "react";
 import VoucherCard from "./_components/VoucherCard";
 import "./Coupon.css"
 import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
+import { useVoucher } from "../../Hooks/useVoucher";
+import AddVoucher from "./_components/AddVoucher";
 
 const Voucher = () => {
     const [isOpen, setIsOpen] = useState(false);
-
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
 
     const { fetchVoucher } = useVoucher()
+
+    console.log("fetchVoucher?.data: ", fetchVoucher?.data)
 
     return (
         <div className='voucher-page pages-wrapper' >
@@ -28,11 +31,17 @@ const Voucher = () => {
                 </div>
             </div>
             <div className="voucher-cards">
-                <VoucherCard />
-                <VoucherCard />
-                <VoucherCard />
-                <VoucherCard />
+                {
+                    fetchVoucher?.data?.map((item, i) => <VoucherCard data={item} key={i} />)
+                }
             </div>
+
+            {isOpen && (
+                <div className="overlay"></div>
+            )}
+            {isOpen && (
+                <AddVoucher togglePopup={togglePopup} />
+            )}
         </div>
     )
 }
