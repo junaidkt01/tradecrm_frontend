@@ -2,7 +2,6 @@ import { useState } from "react";
 import VoucherCard from "./_components/VoucherCard";
 import "./Coupon.css"
 import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
-import Vouchercardskeleton from "../../Skeleton/Vouchercardskeleton";
 
 const Voucher = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +10,9 @@ const Voucher = () => {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
+
+    const { fetchVoucher } = useVoucher()
+
     return (
         <div className='voucher-page pages-wrapper' >
             <Breadcrumbs title="Coupon / Voucher" />
@@ -25,17 +27,12 @@ const Voucher = () => {
                     </button>
                 </div>
             </div>
-            {true ? (
-                <Vouchercardskeleton />
-            ) : (
-                <div className="voucher-cards">
-                    <VoucherCard />
-                    <VoucherCard />
-                    <VoucherCard />
-                    <VoucherCard />
-                </div>
-            )}
-
+            <div className="voucher-cards">
+                <VoucherCard />
+                <VoucherCard />
+                <VoucherCard />
+                <VoucherCard />
+            </div>
         </div>
     )
 }

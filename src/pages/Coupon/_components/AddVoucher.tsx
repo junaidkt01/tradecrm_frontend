@@ -1,74 +1,45 @@
-import { useEffect, useState } from "react";
-import PrimaryButton from "../../../../components/Buttons/PrimaryButton/PrimaryButton";
-import { BonusType, useBonus } from "../../../../Hooks/useBonus";
+import { useState } from "react";
+import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton"
+import { useVoucher, VoucherType } from "../../../Hooks/useVoucher";
 
-const AddBonusForm = ({ togglePopup, data }: { togglePopup: () => void; data: BonusType | undefined }) => {
-    const [formData, setFormData] = useState<any>({
-        bonus_name: "",
-        bonus_level: 0,
-        bonus_type: "",
-        bonus_amount: "",
+const AddVoucher = ({ togglePopup }: { togglePopup: () => void }) => {
+    const [formData, setFormData] = useState<VoucherType>({
+        name: "",
+        amount: 0,
         expiry_date: "",
-        status: "Active"
-    })
-
-    useEffect(() => {
-        setFormData(data)
-    }, [data])
-
+        message: "",
+        withdraw: false,
+    });
     const handleTogglePopup = () => {
         togglePopup();
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev: any) => ({
-            ...prev,
-            [name]: value
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | any>) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: type === 'checkbox' ? checked : value,
         }));
     };
 
-    const { addBonus, updateBonus } = useBonus()
+    const { addVoucher } = useVoucher();
 
-    const handleFormSubmit = async () => {
-        const mutation = data ? updateBonus : addBonus;
-
+    const handleFormSubmit = async (e: any) => {
+        e.preventDefault();
         try {
-            await mutation.mutateAsync(formData);
-            console.log(`Bonus ${data ? "updated" : "added"} successfully!`);
+            await addVoucher.mutateAsync(formData);
+            console.log("Voucher added successfully!");
             togglePopup();
         } catch (error) {
-            console.error(`Error ${data ? "updating" : "adding"} bonus:`, error);
+            console.error("Error adding voucher: ", error);
         }
     };
 
     return (
-        <div className="add-popup-window" >
+        <form onSubmit={handleFormSubmit} className="add-popup-window" >
             <div className="bonus-popup-head" >
                 <div className="bonus-popup-head-mobile-title" ><p>Add Workspace</p></div>
                 <div className="bonus-popup-radio-inputs" >
-                    <div>
-                        <input
-                            onChange={handleInputChange}
-                            type="radio"
-                            name="bonus_type"
-                            id="bonus_type_withdrawal"
-                            value="Proportional by withdrawal amount"
-                            checked={formData?.bonus_type === "Proportional by withdrawal amount"}
-                        />
-                        <label htmlFor="bonus_type_withdrawal">Proportional by withdrawal amount</label>
-                    </div>
-                    <div>
-                        <input
-                            onChange={handleInputChange}
-                            type="radio"
-                            name="bonus_type"
-                            id="bonus_type_initial"
-                            value="Initial bonus amount"
-                            checked={formData?.bonus_type === "Initial bonus amount"}
-                        />
-                        <label htmlFor="bonus_type_initial">Initial bonus amount</label>
-                    </div>
                 </div>
                 <div className="bonus-popup-controlls" >
                     <button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,49 +52,72 @@ const AddBonusForm = ({ togglePopup, data }: { togglePopup: () => void; data: Bo
             </div>
 
             <div className="bonus-popup-inputs" >
-                <div className="bonus-popup-inputs-first" >
-                    <div className="bonus-popup-input" >
-                        <label htmlFor="">Bonus Name</label>
-                        <input value={formData?.bonus_name} onChange={handleInputChange} name="bonus_name" className="bonus-popup-input-field" type="text" placeholder="Enter Boner Name" />
-                    </div>
-                    <div className="bonus-popup-input" >
-                        <label htmlFor="">Bonus Level</label>
-                        <input value={formData?.bonus_level} onChange={handleInputChange} name="bonus_level" type="number" placeholder="0" />
-                    </div>
-                </div>
+                {/* <div className="bonus-popup-inputs-first" >
+                </div> */}
                 <div className="bonus-popup-inputs-second" >
                     <div className="bonus-popup-input" >
+                        <label htmlFor="">Name</label>
+                        <input
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
+                            name="name" className="bonus-popup-input-field" type="text" placeholder="Enter Name" />
+                    </div>
+                    <div className="bonus-popup-input" >
+                        <label htmlFor="">Amount ($)</label>
+                        <input
+                            value={formData.amount}
+                            onChange={handleInputChange}
+                            required
+                            name="amount" type="number" placeholder="Enter Amount" />
+                    </div>
+                    <div className="bonus-popup-input" >
                         <label htmlFor="">Set Expiry</label>
                         <input
+                            value={formData.expiry_date}
+                            onChange={handleInputChange}
+                            required
                             type="date"
                             name="expiry_date"
                             id="expiry_date"
-                            value={formData?.expiry_date ? formData.expiry_date.split("T")[0] : ""}
-                            onChange={handleInputChange}
                             placeholder="Select Date" />
                     </div>
                     <div className="bonus-popup-input" >
-                        <label htmlFor="">Set Bonus ($)</label>
-                        <input value={formData?.bonus_amount} type="number" onChange={handleInputChange} name="bonus_amount" placeholder="0" />
-                    </div>
-                    <div className="bonus-popup-input" >
-                        <label htmlFor="">Set Expiry</label>
-                        <input
-                            type="date"
-                            name="expiry_date"
-                            id="expiry_date"
-                            value={formData?.expiry_date ? formData.expiry_date.split("T")[0] : ""}
+                        <label htmlFor="">Message</label>
+                        <textarea
+                            value={formData?.message}
                             onChange={handleInputChange}
-                            placeholder="Select Date" />
+                            required
+                            name="message" placeholder="Enter Message" />
+                    </div>
+                </div>
+                <div className="bonus-popup-inputs-second">
+                    <div className="toggle-settings-btn">
+                        <label htmlFor="withdraw-toggle">Withdraw</label>
+                        <br />
+                        <div style={{ marginTop: "12px", display: "flex", alignItems: "center" }}>
+                            <span className="label">OFF</span>
+                            <label className="switch">
+                                <input
+                                    type="checkbox"
+                                    id="withdraw-toggle"
+                                    name="withdraw"
+                                    checked={formData.withdraw}
+                                    onChange={handleInputChange}
+                                />
+                                <span className="slider"></span>
+                            </label>
+                            <span className="label">ON</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div className="add-user-form-button" >
-                <PrimaryButton onClick={handleFormSubmit} title="Submit" />
+                <PrimaryButton title="Submit" />
             </div>
-        </div>
+        </form>
     )
 }
 
-export default AddBonusForm
+export default AddVoucher
