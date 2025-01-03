@@ -6,6 +6,7 @@ import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
 import AddWorksSpaceForm from "./_components/AddForms/AddWorksSpaceForm";
 // import { workspace } from "../../utils/contents/configuration/worksSpace";
 import { useWorkspace, Workspace } from "../../Hooks/useWorkspace";
+import Workspaceskeleton from "../../Skeleton/Workspaceskeleton";
 
 const Configuration = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +24,10 @@ const Configuration = () => {
 
     const { fetchWorkspace } = useWorkspace({})
 
-    if (fetchWorkspace.isLoading) {
-        return <div>Loading...</div>
-    }
+    // if (fetchWorkspace.isLoading) {
+    //     return <div>Loading...</div>
+    // }
+   
     // console.log("fetchWorkspace: ", fetchWorkspace?.data)
 
     return (
@@ -37,11 +39,22 @@ const Configuration = () => {
                     <AddBtn title="Add Workspace" onClick={() => togglePopup("close")} />
                 </div>
             </div>
-            <div className="workspace-cards">
+            
+            {fetchWorkspace.isLoading || fetchWorkspace.isError ? (
+                <Workspaceskeleton  />
+            ) : (
+                <div className="workspace-cards">
+                    {fetchWorkspace?.data?.map((item, i) => (
+                        <WorksSpaceCard onButtonClick={togglePopup} data={item} key={i} />
+                    ))}
+                </div>
+            )}
+
+            {/* <div className="workspace-cards">
                 {
                     fetchWorkspace?.data?.map((item, i) => <WorksSpaceCard onButtonClick={togglePopup} data={item} key={i} />)
                 }
-            </div>
+            </div> */}
 
             {isOpen && (
                 <div className="overlay"></div>

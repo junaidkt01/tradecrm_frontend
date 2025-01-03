@@ -4,6 +4,7 @@ import ManagerCard from "./_components/ManagerCard";
 import AddManagerForm from "./_components/AddForms/AddManagerForm";
 import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
 import { ManagerType, useManagers } from "../../Hooks/useManager";
+import Managerskeleton from "../../Skeleton/Managerskeleton";
 
 const Manager = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +24,7 @@ const Manager = () => {
     const { fetchManagers } = useManagers();
 
 
-    if (fetchManagers.isLoading || fetchManagers.error) {
-        return <h1>loading</h1>
-    }
-
+   
     return (
         <div className="executives-page pages-wrapper" >
             <Breadcrumbs title="Configuration / Manager" />
@@ -41,11 +39,13 @@ const Manager = () => {
                     </button>
                 </div>
             </div>
-            <div className="manager-cards">
-                {
-                    fetchManagers?.data?.map((item, i) => <ManagerCard onButtonClick={togglePopup} data={item} key={i} />)
-                }
-            </div>
+            {fetchManagers.isLoading ? <Managerskeleton /> :
+                <div className="manager-cards">
+                    {
+                        fetchManagers?.data?.map((item, i) => <ManagerCard onButtonClick={togglePopup} data={item} key={i} />)
+                    }
+                </div>
+            }
 
             {isOpen && (
                 <div className="overlay"></div>

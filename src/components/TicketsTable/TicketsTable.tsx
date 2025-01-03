@@ -1,5 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { TicketType, useTickets } from "../../Hooks/useTickets";
+import Tableskeleton from "../../Skeleton/Tableskeleton";
 
 export const OpenTicketsTable = ({ tableData, isLoading, onHandleCommentId }: { tableData: TicketType[] | undefined; isLoading: boolean; onHandleCommentId: (id: number|undefined) => void }) => {
     const { updateTicket } = useTickets({})
@@ -58,15 +59,7 @@ export const OpenTicketsTable = ({ tableData, isLoading, onHandleCommentId }: { 
                             </td>
                         </tr>
                     ))}
-                </tbody> :
-                    Array.from(({ length: 10 })).map((_, i) => <tbody key={i} ><tr>
-                        <td> <Skeleton /> </td>
-                        <td> <Skeleton /> </td>
-                        <td> <Skeleton /> </td>
-                        <td> <Skeleton /> </td>
-                        <td> <Skeleton /> </td>
-                        <td> <Skeleton /> </td>
-                    </tr></tbody>)
+                </tbody> : <Tableskeleton count={6} />
                 }
             </table>
         </div>

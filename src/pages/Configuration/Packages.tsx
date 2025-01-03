@@ -4,6 +4,7 @@ import "./Configuration.css"
 import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
 import AddPackagesForm from "./_components/AddForms/AddPackagesForm";
 import { Package, usePackages } from "../../Hooks/usePackages";
+import Packageskeleton from "../../Skeleton/Packageskeleton";
 
 const Packages = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +36,18 @@ const Packages = () => {
                     </button>
                 </div>
             </div>
-            {fetchPackages.isLoading ? <div><h1>loading</h1></div> :
+            {fetchPackages.isLoading?<Packageskeleton/>:
                 <div className="packages-cards">
                     {
                         fetchPackages?.data?.map((item: Package, i: number) => <PackagesCard onButtonClick={togglePopup} data={item} key={i} />)
                     }
                 </div>}
+            {/* {fetchPackages.isLoading ? <div><h1>loading</h1></div> :
+                <div className="packages-cards">
+                    {
+                        fetchPackages?.data?.map((item: Package, i: number) => <PackagesCard onButtonClick={togglePopup} data={item} key={i} />)
+                    }
+                </div>} */}
 
             {isOpen && (
                 <div className="overlay"></div>

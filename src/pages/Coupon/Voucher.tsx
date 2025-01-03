@@ -2,9 +2,11 @@ import { useState } from "react";
 import VoucherCard from "./_components/VoucherCard";
 import "./Coupon.css"
 import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
+import Vouchercardskeleton from "../../Skeleton/Vouchercardskeleton";
 
 const Voucher = () => {
     const [isOpen, setIsOpen] = useState(false);
+
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
@@ -23,12 +25,17 @@ const Voucher = () => {
                     </button>
                 </div>
             </div>
-            <div className="voucher-cards">
-                <VoucherCard />
-                <VoucherCard />
-                <VoucherCard />
-                <VoucherCard />
-            </div>
+            {true ? (
+                <Vouchercardskeleton />
+            ) : (
+                <div className="voucher-cards">
+                    <VoucherCard />
+                    <VoucherCard />
+                    <VoucherCard />
+                    <VoucherCard />
+                </div>
+            )}
+
         </div>
     )
 }

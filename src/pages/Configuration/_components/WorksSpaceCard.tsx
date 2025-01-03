@@ -96,11 +96,10 @@ const WorksSpaceCard = ({ data, onButtonClick }: { data: Workspace; onButtonClic
                             </div>
                         </MenuPopup>}
                     </div>
-
                 </div>
                 <div className="works-space-card-content" >
                     <p>Workspace Name: <strong>{data.workspace_name}</strong></p>
-                    <p>Workspace ID: <strong>{data.external_id}</strong></p>
+                    <p>Workspace ID: <strong>{data.workspace_id}</strong></p>
                 </div>
             </div>
             <div className="works-space-card-bottom" >

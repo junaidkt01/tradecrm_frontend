@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/Buttons/Breadcrumbs/Breadcrumbs";
 // import { bonus } from "../../utils/contents/configuration/bonus";
 import AddBonusForm from "./_components/AddForms/AddBonusForm";
 import { BonusType, useBonus } from "../../Hooks/useBonus";
+import Bonusskeleton from "../../Skeleton/Bonusskeleton";
 
 const Bonus = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +37,14 @@ const Bonus = () => {
                     </button>
                 </div>
             </div>
+            {fetchBonuses.isLoading?<Bonusskeleton/>:
             <div className="bonus-cards">
-                {
-                    fetchBonuses.data?.map((item, i) => <BonusCard onButtonClick={togglePopup} data={item} key={i} />)
-                }
-            </div>
+            {
+                fetchBonuses.data?.map((item, i) => <BonusCard onButtonClick={togglePopup} data={item} key={i} />)
+            }
+        </div>
+            }
+            
 
             {isOpen && (
                 <div className="overlay"></div>
