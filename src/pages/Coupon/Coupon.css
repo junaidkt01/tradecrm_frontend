@@ -43,9 +43,9 @@
   line-height: 18px;
 }
 
-.voucher-card .cards-top div:first-child button {
+.voucher-card .expire-btn {
   padding: 6px 10px;
-  background-color: #ff7900;
+  background-color: green;
   border-radius: 999px;
   border: none;
 
@@ -56,7 +56,11 @@
   cursor: pointer;
 }
 
-.voucher-card .cards-top div:last-child {
+.voucher-card .expire-btn.expired {
+  background-color: #ff7900;
+}
+
+.voucher-card .cards-top .copy-btn {
   background-color: var(--primary-minimal-color);
   width: 36px;
   height: 36px;
@@ -86,20 +90,25 @@
   padding: 0 16px 16px 16px;
 }
 
-.voucher-bottom-btns button:first-child {
+.voucher-bottom-btns .send-mail {
   padding: 8px 16px;
   background-color: transparent;
   color: var(--black);
   border-radius: 999px;
   border: 1px solid var(--black);
+  cursor: pointer;
 }
 
-.voucher-bottom-btns button:last-child {
-  padding: 12px 26px;
+.voucher-bottom-btns .disable-btn {
+  padding: 8px 16px;
   background-color: var(--primary-color);
   color: white;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
+}
+.voucher-bottom-btns .disable-btn.expired {
+  display: none;
 }
 
 /* voucher-card end */

@@ -92,3 +92,13 @@ export const works_space_api = {
   edit: works_space_url,
   delete: works_space_url,
 };
+
+//-------Voucher URL-------//
+const voucher_url = `${api_base_url}/vouchers`;
+
+export const voucher_api = {
+  get: voucher_url,
+  post: `${voucher_url}/create`,
+  edit: voucher_url,
+  delete: voucher_url,
+};
