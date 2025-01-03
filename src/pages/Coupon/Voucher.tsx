@@ -14,6 +14,8 @@ const Voucher = () => {
 
     const { fetchVoucher } = useVoucher()
 
+    console.log("fetchVoucher?.data: ", fetchVoucher?.data)
+
     return (
         <div className='voucher-page pages-wrapper' >
             <Breadcrumbs title="Coupon / Voucher" />
